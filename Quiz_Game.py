@@ -30,7 +30,12 @@ def run_quiz (questions): #defining function
         for option in question["options"]: #loop through options and print
            print(option)
         
-        answer = input("Enter your answer (A, B, C, D) or type EXIT to quit: ").upper()
+        while True:        
+            answer = input("\nEnter your answer (A, B, C, D) or type EXIT to quit: ").upper()
+            if answer in ["A", "B", "C", "D", "EXIT"]: #validating
+                break
+            else:
+                print("Invalid input. Please enter A, B, C, D, or Exit.")
         
         if answer == "EXIT":
             print("Quitting the quiz...")
